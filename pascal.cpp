@@ -1,5 +1,4 @@
-// Generate Pascal Triangle taking number of rows as input
-/*
+/* Generate Pascal Triangle taking number of rows as input
 1
 1 1
 1 2 1
