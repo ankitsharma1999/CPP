@@ -115,6 +115,21 @@ class linked_list
         
     }
 
+    void Rverse()
+    {
+        node *current, *next, *prev;
+        prev=NULL;
+        current=head;
+        while(current != NULL)
+        {
+            next=current->next;
+            current->next=prev;
+            prev=current;
+            current=next;
+        }
+        head=prev;
+    }
+
     void Display()
     {
         node* tmp;
@@ -143,6 +158,7 @@ int main()
     A.Insert(11,11);
     A.Modify(10,11);
     A.Delete(11);
+    A.Rverse();
     A.Display();
     return 0;
 }
