@@ -87,6 +87,7 @@ class linked_list
             else
             {
                 temp->next=NULL;
+                tail=temp;
             }
             
         }
