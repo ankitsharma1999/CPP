@@ -20,8 +20,8 @@ class linked_list
     void Insert(int n)
     {
         node* temp = new node;
-        (*temp).data = n;
-        (*temp).next = NULL;
+        temp->data = n;
+        temp->next = NULL;
 
         if(head==NULL)
         {
@@ -34,6 +34,31 @@ class linked_list
             tail = tail->next;
         }
         
+    }
+
+    void Insert(int data, int n)
+    {
+        node* temp1 = new node;
+        node* temp2 = new node;
+        temp1->data=data;
+        temp1->next=NULL;
+        if(n==1)
+        {
+            temp1->next=head;
+            head = temp1;
+        }
+        else
+        {
+            temp2=head;
+            for(int i=0;i<n-2;i++)
+            {
+                temp2=temp2->next;
+            }
+            temp1->next=temp2->next;
+            temp2->next=temp1;
+        }
+        
+
     }
 
     void display()
@@ -60,8 +85,8 @@ int main()
     A.Insert(7);
     A.Insert(8);
     A.Insert(9);
-    A.Insert(10);
-    A.Insert(11);
+    A.Insert(11,1);
+    A.Insert(10,3);
     A.display();
     return 0;
 }
