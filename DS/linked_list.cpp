@@ -50,7 +50,7 @@ class linked_list
         else
         {
             temp2=head;
-            for(int i=0;i<n-2;i++)
+            for(int i=1;i<n-1;i++)
             {
                 temp2=temp2->next;
             }
@@ -60,8 +60,61 @@ class linked_list
         
 
     }
+    
+    void Delete(int n)
+    {
+        node* temp = new node;
+        node* temp_new = new node;
+        if(n==1)
+        {
+            temp=head;
+            temp=temp->next;
+            head = temp;
+        }
+        else
+        {
+            temp=head;
+            for(int i=1; i<n-1; i++)
+            {
+                temp=temp->next;
+            }
+            temp_new=temp->next;
+            if(temp_new->next!=NULL)
+            {
+                temp_new=temp_new->next;
+                temp->next=temp_new;
+            }
+            else
+            {
+                temp->next=NULL;
+            }
+            
+        }
+        
+    }
+    
+    void Modify(int data, int n)
+    {
+        node* temp_1 = new node;
+        node* temp_2 = new node;
+        temp_2->data = data;
+        if(n==1)
+        {
+            head->data=data;
+        }
+        else
+        {
+            temp_1=head;
+            for(int i=1;i<n;i++)
+            {
+                temp_1=temp_1->next;
+            }
+            temp_1->data=data;
+        }
+        
+    }
 
-    void display()
+    void Display()
     {
         node* tmp;
         tmp = head;
@@ -85,8 +138,10 @@ int main()
     A.Insert(7);
     A.Insert(8);
     A.Insert(9);
-    A.Insert(11,1);
-    A.Insert(10,3);
-    A.display();
+    A.Insert(10);
+    A.Insert(11,11);
+    A.Modify(10,11);
+    A.Delete(11);
+    A.Display();
     return 0;
 }
