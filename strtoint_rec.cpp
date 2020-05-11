@@ -2,6 +2,10 @@
 # include<cmath>
 using namespace std;
 
+
+// A simple program to convert a string to int using recursion
+
+
 void toInt(string str, int& n, int index)
 {
     if(index == str.length())
