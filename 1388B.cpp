@@ -26,13 +26,9 @@ string solve(int n)
     for (int i = n; i >= 1; i--)
     {
         if (i > num)
-        {
             res += "9";
-        }
         else
-        {
             res += "8";
-        }
     }
     return res;
 }
